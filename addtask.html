@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task Page</title>
+    <link rel="stylesheet" href="stylesheet.css"> 
+    <script src="https://kit.fontawesome.com/d28bf72700.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="columns is-centered">
+        <div class="column is-8" style="padding:6rem 0px">
+            <div class="box">
+                <div class="notification is-primary">
+                    <p class="title is-1" style="text-align:center">Add a New Task</p>
+                </div>
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="message is-primary">
+                            <div class="message-body">
+                                <div class="field is-horizontal">
+                                    <div class=field-label is-normal">
+                                        <label class="label">Task Name</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field is-narrow">
+                                            <div class="control">
+                                                <input class="input" type="text">
+                                            </div>
+                                            <p class="help">What is the task?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field is-horizontal">
+                                    <div class=field-label is-normal">
+                                        <label class="label">For</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field is-narrow">
+                                            <div class="control">
+                                                <div class="select is-fullwidth">
+                                                    <select >
+                                                        <option>School</option>
+                                                        <option>Self</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <p class="help">What is this task for?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field is-horizontal">
+                                    <div class=field-label is-normal">
+                                        <label class="label">Priority</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field is-narrow">
+                                            <div class="control">
+                                                <div class="select is-fullwidth">
+                                                    <select>
+                                                        <option>Low</option>
+                                                        <option>Medium</option>
+                                                        <option>High</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <p class="help">How urgent is it?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field is-horizontal">
+                                    <div class=field-label is-normal">
+                                        <label class="label">Length</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field is-narrow">
+                                            <div class="field has-addons">
+                                                <div class="control">
+                                                    <input class="input" type="number">
+                                                </div>
+                                                <div class="control">
+                                                    <div class="select">
+                                                        <select>
+                                                            <option>minutes</option>
+                                                            <option>hours</option>
+                                                            <option>years</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="help">How long will it take?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="message">
+                            <div class="message-header">Add a Description</div>
+                            <div class="message-body">
+                                <textarea class="textarea" rows="9" style="resize:none" placeholder="Add a new description to the task here."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons is-centered">
+                    <button onclick="location.href='list.html'" class="button is-primary is-rounded">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                            <span>Submit</span>
+                        </span>
+                    </button>
+                    <button onclick="location.href='list.html'" class="button is-rounded">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-solid fa-x"></i>
+                            </span>
+                            <span>Cancel</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

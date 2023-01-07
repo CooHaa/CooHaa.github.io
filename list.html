@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link rel="stylesheet" href="stylesheet.css"> 
+    <script src="https://kit.fontawesome.com/d28bf72700.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <div class="columns is-centered">
+        <div class="column is-8" style="padding: 10rem 0px">
+            <div class="box">
+                <div class="notification is-primary">
+                    <p class="title is-1" style="text-align:center">Task List</p>
+                    <p class="subtitle is-8" style="text-align:center">Click 
+                        <span class="icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </span>
+                        to see more details.</p>
+                </div>
+                <div class="message is-primary is-light">
+                    <div class="message-body">
+                        <table class="table is-fullwidth has-background-primary-light">
+                            <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>For</th>
+                                    <th>Priority</th>
+                                    <th>Length</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Math Homework
+                                        <a href="task1.html" style="color:#00d1b2; text-decoration: none">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td>School</td>
+                                    <td>High</td>
+                                    <td>20 minutes</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>World Domination
+                                        <a href="task1.html" style="color:#00d1b2; text-decoration: none">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td>Self</td>
+                                    <td>Low</td>
+                                    <td>20 years</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>Sleep
+                                        <a href="task1.html" style="color:#00d1b2; text-decoration: none">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                    <td>Self</td>
+                                    <td>High</td>
+                                    <td>8 hours</td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="buttons is-centered">
+                    <button onclick="location.href='addtask.html'" type="button" class="button is-primary is-rounded">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                            <span>Add Task</span>
+                        </span>
+                    </button>
+                    <button onclick="location.href='index.html'" type="button" class="button is-primary is-rounded">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-solid fa-house"></i>
+                            </span>
+                            <span>Return Home</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
