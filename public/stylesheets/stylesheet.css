@@ -5,7 +5,7 @@ body {
     margin:0; 
     height:770px; 
     width:100%; 
-    background-image:url(plantpot.png); 
+    background-image:url(/images/plantpot.png); 
     background-size:15%; 
     background-repeat:no-repeat; 
     background-attachment:fixed; 
