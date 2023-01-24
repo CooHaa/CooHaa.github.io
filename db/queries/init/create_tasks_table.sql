@@ -1,4 +1,4 @@
--- Create tasks table
+-- Create tasks table (NOT USED)
 CREATE TABLE `tasks` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `task` VARCHAR(50) NOT NULL,

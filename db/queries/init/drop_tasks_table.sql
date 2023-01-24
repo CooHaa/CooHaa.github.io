@@ -1,2 +1,2 @@
--- Drop existing tables on initialization
+-- Drop existing tables on initialization (NOT USED)
 DROP TABLE IF EXISTS `tasks`;
