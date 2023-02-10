@@ -13,9 +13,11 @@ const clear_tasks_table = fs.readFileSync(__dirname + "/queries/init/clear_tasks
 db.execute(clear_tasks_table);
 
 // Insert sample data
-db.execute(insert_sample_tasks, ['Math Homework', '2', '3', '20', '2', '0']);
-db.execute(insert_sample_tasks, ['World Domination', '1', '1', '20', '3', '0']);
-db.execute(insert_sample_tasks, ['Sleep', '1', '3', '8', '2', '0']);
+db.execute(insert_sample_tasks, ['1', 'Math Homework', '2', '3', '20', '2', '1', 'Chapter 13.4 is due tomorrow!']);
+db.execute(insert_sample_tasks, ['2', 'World Domination', '1', '1', '20', '3', '0', 'Maybe some day.']);
+db.execute(insert_sample_tasks, ['3', 'Sleep', '1', '3', '8', '2', '1', 'I need to sleep more! I haven\'t been getting good sleep because of my procrastination.']);
+db.execute(insert_sample_tasks, ['4', 'Study for Math Quiz', '2', '2', '2', '2', '1', 'I have a quiz on triple integrals next week. I should get on that!']);
+db.execute(insert_sample_tasks, ['5', 'Become God', '3', '1', '100', '3', '0', 'Eventually...']);
 
 // Read table
 db.execute(read_tasks_table, 

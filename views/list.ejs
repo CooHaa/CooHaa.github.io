@@ -33,45 +33,23 @@
                                 </tr>
                             </thead>
                             <tbody>
+
+                                <% for( let i = 0; i < list.length; i++ ) { %>
                                 <tr>
-                                    <td>Math Homework
-                                        <a href="/list/task" style="color:#00d1b2; text-decoration: none">
+                                    <td><%= list[i].task %>
+                                        <a href="/list/task/<%= list[i].id %>" style="color:#00d1b2; text-decoration: none">
                                             <span class="icon">
                                                 <i class="fa-solid fa-circle-info"></i>
                                             </span>
                                         </a>
                                     </td>
-                                    <td>School</td>
-                                    <td>High</td>
-                                    <td>20 minutes</td>
-                                    <td><input type="checkbox"></td>
+                                    <td><%= list[i].reason %> </td>
+                                    <td><%= list[i].priority %> </td>
+                                    <td><%= list[i].length %> <%= list[i].time_unit %> </td>
+                                    <td><input type="checkbox" <% if (list[i].status == 1) { %> checked <% } %>></td>
                                 </tr>
-                                <tr>
-                                    <td>World Domination
-                                        <a href="/list/task" style="color:#00d1b2; text-decoration: none">
-                                            <span class="icon">
-                                                <i class="fa-solid fa-circle-info"></i>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td>Self</td>
-                                    <td>Low</td>
-                                    <td>20 years</td>
-                                    <td><input type="checkbox"></td>
-                                </tr>
-                                <tr>
-                                    <td>Sleep
-                                        <a href="/list/task" style="color:#00d1b2; text-decoration: none">
-                                            <span class="icon">
-                                                <i class="fa-solid fa-circle-info"></i>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td>Self</td>
-                                    <td>High</td>
-                                    <td>8 hours</td>
-                                    <td><input type="checkbox"></td>
-                                </tr>
+                                <% } %>
+
                             </tbody>
                         </table>
                     </div>
