@@ -13,7 +13,7 @@
         <div class="column is-8" style="padding: 10rem 0px">
             <div class="box">
                 <div class="notification is-primary">
-                    <p class="title is-1" style="text-align:center">Task List</p>
+                    <p class="title is-1" style="text-align:center"><%= user.name %>'s Task List</p>
                     <p class="subtitle is-8" style="text-align:center">Click 
                         <span class="icon">
                             <i class="fa-solid fa-circle-info"></i>
@@ -29,7 +29,6 @@
                                     <th>For</th>
                                     <th>Priority</th>
                                     <th>Length</th>
-                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -46,7 +45,6 @@
                                     <td><%= list[i].reason %> </td>
                                     <td><%= list[i].priority %> </td>
                                     <td><%= list[i].length %> <%= list[i].time_unit %> </td>
-                                    <td><input type="checkbox" <% if (list[i].status == 1) { %> checked <% } %>></td>
                                 </tr>
                                 <% } %>
 
@@ -69,6 +67,14 @@
                                 <i class="fa-solid fa-house"></i>
                             </span>
                             <span>Return Home</span>
+                        </span>
+                    </button>
+                    <button onclick="location.href='/logout'" type="button" class="button is-danger is-rounded">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </span>
+                            <span>Log Out</span>
                         </span>
                     </button>
                 </div>

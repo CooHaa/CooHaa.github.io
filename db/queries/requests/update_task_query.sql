@@ -7,4 +7,5 @@ SET
     tasks.time_unit = ?,
     tasks.desc = ?
 WHERE
-    tasks.id = ?;
+    tasks.id = ?
+    AND tasks.userid = ?;

@@ -22,7 +22,7 @@
         <div class="column is-8" style="padding: 10rem 0px">
             <div class="box"> 
                 <div class="notification is-primary">
-                    <p class="title is-1" style="text-align:center"><b>Task:</b> <%= task %></p>
+                    <p class="title is-1" style="text-align:center"><b>Task for <%= user.name %>:</b> <%= task %></p>
                 </div>
                 <div class="tile is-ancestor">
                     <div class="tile is-4 is-parent">
@@ -41,11 +41,6 @@
                                         <th>Length</th>
                                         <td><%= length %> <%= time_unit %></td>
                                     </tr>
-                                    <tr>
-                                        <th>Status</th>
-                                        <td><input type="checkbox" <% if (status == 1) { %> checked <% } %>></td>
-                                    </tr>
-                                    
                                 </table>
                             </div>
                         </div>
@@ -86,6 +81,14 @@
                                 <i class="fa-solid fa-house"></i>
                             </span>
                             <span>Return to Task List</span>
+                        </span>
+                    </button>
+                    <button onclick="location.href='/logout'" type="button" class="button is-danger is-rounded">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </span>
+                            <span>Log Out</span>
                         </span>
                     </button>
                 </div>

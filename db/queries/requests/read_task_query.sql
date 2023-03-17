@@ -1,5 +1,5 @@
 -- Read a specific task based on id
-SELECT id, task, reason.reason, priority.priority, length, time_unit.time_unit, status, tasks.desc FROM tasks
+SELECT id, task, reason.reason, priority.priority, length, time_unit.time_unit, tasks.desc FROM tasks
 JOIN reason
     ON tasks.for = reason.reason_id
 JOIN priority
@@ -7,4 +7,5 @@ JOIN priority
 JOIN time_unit
     ON tasks.time_unit = time_unit.time_unit_id
 WHERE
-    tasks.id = ?;
+    tasks.id = ?
+    AND tasks.userid = ?;
