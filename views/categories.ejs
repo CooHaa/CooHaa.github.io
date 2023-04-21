@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link rel="stylesheet" href="/stylesheets/stylesheet.css"> 
+    <script src="https://kit.fontawesome.com/d28bf72700.js" crossorigin="anonymous"></script> 
+    <script src="/scripts/script.js"></script>
+</head>
+<body>
+    <div class="columns is-centered">
+        <div class="column is-8" style="padding: 10rem 0px">
+            <div class="box">
+                <div class="notification is-primary">
+                    <p class="title is-1" style="text-align:center"><%= user.name %>'s Categories</p>
+                </div>
+                <div class="message is-primary is-light">
+                    <div class="message-body">
+                        <table class="table is-fullwidth has-background-primary-light">
+                            <thead>
+                                <tr>
+                                    <th>Category Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for( let i = 0; i < categories.length; i++ ) { %>
+                                <tr>
+                                    <td><%= categories[i].reason %>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="buttons is-centered">
+                    <button type="button" class="button is-primary is-rounded js-modal-trigger" data-target="add-category-modal">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                            <span>Add Category</span>
+                        </span>
+                    </button>
+                    <button type="button" class="button is-danger is-rounded js-modal-trigger" data-target="delete-category-modal">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-solid fa-minus"></i>
+                            </span>
+                            <span>Delete Category</span>
+                        </span>
+                    </button>
+                    <button onclick="location.href='/list'" type="button" class="button is-primary is-rounded">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fa-solid fa-list"></i>
+                            </span>
+                            <span>Return to List</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adding category modal -->
+    <div class="modal" id="add-category-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <form method="post">
+                    <div class="message is-primary">
+                        <div class="message-header">Add a Category</div>
+                        <div class="message-body">
+                            <div class="columns is-centered">
+                                <div class="column is-8">
+                                    <div class="field is-horizontal center">
+                                        <div class="field-label is-normal">
+                                            <label class="label">Category</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field is-narrow">
+                                                <div class="control">
+                                                    <input type="text" class="input" name="new_category">
+                                                </div>
+                                                <p class="help">What is the name of the new category?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="buttons is-centered">
+                        <button class="button is-primary is-rounded" type="submit" formaction="/list/addtask/category">
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                                <span>Submit</span>
+                            </span>
+                        </button>
+                        <button class="button is-rounded" onclick="location.href='/list/categories'" type="button">
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <i class="fa-solid fa-x"></i>
+                                </span>
+                                <span>Cancel</span>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete category modal -->
+    <div class="modal" id="delete-category-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <form method="post">
+                    <div class="message is-danger">
+                        <div class="message-header">Delete a Category</div>
+                        <div class="message-body">
+                            <div class="columns is-centered">
+                                <div class="column is-8">
+                                    <div class="field is-horizontal center">
+                                        <div class="field-label is-normal">
+                                            <label class="label">Category</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field is-narrow">
+                                                <div class="control">
+                                                    <div class="select is-fullwidth">
+                                                        <select name="delete_cat">
+                                                            <% for( let i = 0; i < categories.length; i++ ) { %>
+                                                                <option value="<%= categories[i].reason_id %>"> <%= categories[i].reason %> </option>
+                                                            <% } %>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <p class="help">Which task would you like to delete? Tasks assigned to a deleted category will default to "Self."</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons is-centered">
+                        <button class="button is-danger is-rounded" type="submit" formaction="/list/addtask/deletecategory">
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
+                                <span>Delete</span>
+                            </span>
+                        </button>
+                        <button class="button is-rounded" onclick="location.href='/list/categories'" type="button">
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <i class="fa-solid fa-x"></i>
+                                </span>
+                                <span>Cancel</span>
+                            </span>
+                        </button>
+                    </div>
+                        
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

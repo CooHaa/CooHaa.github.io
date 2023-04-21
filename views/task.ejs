@@ -22,7 +22,7 @@
         <div class="column is-8" style="padding: 10rem 0px">
             <div class="box"> 
                 <div class="notification is-primary">
-                    <p class="title is-1" style="text-align:center"><b>Task for <%= user.name %>:</b> <%= task %></p>
+                    <p class="title is-1" style="text-align:center"><b>Task for <%= user.name %>:</b> <%= taskdata.task %></p>
                 </div>
                 <div class="tile is-ancestor">
                     <div class="tile is-4 is-parent">
@@ -31,15 +31,15 @@
                                 <table class="table is-fullwidth has-background-primary-light">
                                     <tr>
                                         <th style="width:20%">For</th>
-                                        <td><%= reason %></td>
+                                        <td><%= taskdata.reason %></td>
                                     </tr>
                                     <tr>
                                         <th>Priority</th>
-                                        <td><%= priority %></td>
+                                        <td><%= taskdata.priority %></td>
                                     </tr>
                                     <tr>
                                         <th>Length</th>
-                                        <td><%= length %> <%= time_unit %></td>
+                                        <td><%= taskdata.length %> <%= taskdata.time_unit %></td>
                                     </tr>
                                 </table>
                             </div>
@@ -52,7 +52,7 @@
                             </div>
                             <div class="message-body">
                                 <p>
-                                    <%= desc %>
+                                    <%= taskdata.desc %>
                                 </p>
                             </div>
                         </div>
@@ -116,9 +116,9 @@
                                                 <div class="control">
                                                     <div class="select">
                                                         <select name="for">
-                                                            <option value="2">School</option>
-                                                            <option value="1">Self</option>
-                                                            <option value="3">Other</option>
+                                                            <% for( let i = 0; i < reasons.length; i++ ) { %>
+                                                                <option value=<%= reasons[i].reason_id %>> <%= reasons[i].reason %> </option>
+                                                            <% } %>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -192,7 +192,7 @@
                                 <span>Submit</span>
                             </span>
                         </button>
-                        <button onclick="location.href='/list/task/<%= id %>'" class="button is-rounded" type="button">
+                        <button onclick="location.href='/list/task/<%= taskdata.id %>'" class="button is-rounded" type="button">
                             <span class="icon-text">
                                 <span class="icon">
                                     <i class="fa-solid fa-x"></i>
@@ -215,7 +215,7 @@
                     <p class="subtitle is-8 has-text-danger"><b>Are you sure about this?</b></p>
                     <p style="margin-bottom: 1.5rem;">Deleting this task will remove it forever. If you want to put it back, you will need to add it again yourself. Although I'm sure that's not much of a problem.</p>
                     <div class="control" style="text-align:center">
-                        <button onclick="location.href='/list/task/<%= id %>/delete'" type="button" class="button is-danger is-rounded">
+                        <button onclick="location.href='/list/task/<%= taskdata.id %>/delete'" type="button" class="button is-danger is-rounded">
                             <span class="icon-text">
                                 <span class="icon">
                                     <i class="fa-solid fa-check"></i>

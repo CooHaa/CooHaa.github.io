@@ -7,5 +7,5 @@ JOIN priority
 JOIN time_unit
     ON tasks.time_unit = time_unit.time_unit_id
 WHERE
-    userid = ?
+    tasks.userid = ?
 ORDER BY tasks.priority DESC;
